@@ -87,6 +87,11 @@ uninstall.sh                         global uninstaller
 LICENSE                              MIT
 ```
 
+## Related workflow agents
+
+- [delivery-manager](https://github.com/45ck/workflow-agents) - Own release readiness, rollback, and operational sequencing
+- [delivery-manager-beads](https://github.com/45ck/workflow-agents) - Track release tasks and blockers as Beads items
+
 ## Related skill packs
 
 - [business-analysis-skills](https://github.com/45ck/business-analysis-skills) - Business analysis techniques, workflows, and quality checks
