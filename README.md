@@ -89,8 +89,8 @@ LICENSE                              MIT
 
 ## Related workflow agents
 
-- [delivery-manager](https://github.com/45ck/workflow-agents) - Own release readiness, rollback, and operational sequencing
-- [delivery-manager-beads](https://github.com/45ck/workflow-agents) - Track release tasks and blockers as Beads items
+- [delivery-manager](https://github.com/45ck/skill-harness) - Own release readiness, rollback, and operational sequencing
+- [delivery-manager-beads](https://github.com/45ck/skill-harness) - Track release tasks and blockers as Beads items
 
 ## Related skill packs
 
