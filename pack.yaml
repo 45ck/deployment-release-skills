@@ -1,0 +1,132 @@
+{
+  "name": "deployment-release-pack",
+  "version": "0.1.0",
+  "type": "skill-pack",
+  "summary": "Deployment strategy, release control, rollback, promotion, runbook, and hypercare pack for Claude Code-style workflows.",
+  "recommended_order": [
+    "direct-vs-parallel-vs-phased-vs-pilot-selector",
+    "release-cut-checker",
+    "go-live-readiness-reviewer",
+    "rollback-readiness-checker",
+    "runbook-writer",
+    "uat-readiness-checker",
+    "environment-promotion-checker",
+    "release-notes-writer",
+    "post-release-monitoring-plan",
+    "deployment-risk-checker"
+  ],
+  "skills": [
+    {
+      "id": "direct-vs-parallel-vs-phased-vs-pilot-selector",
+      "path": "skills/direct-vs-parallel-vs-phased-vs-pilot-selector/SKILL.md",
+      "purpose": "Select an implementation rollout approach by comparing direct, parallel, phased, and pilot deployment options against project constraints and risk.",
+      "handoffs": [
+        "deployment-risk-checker",
+        "go-live-readiness-reviewer",
+        "environment-promotion-checker"
+      ]
+    },
+    {
+      "id": "release-cut-checker",
+      "path": "skills/release-cut-checker/SKILL.md",
+      "purpose": "Check whether a release candidate is coherent, versioned correctly, and complete enough to be cut from the current branch or build line.",
+      "handoffs": [
+        "go-live-readiness-reviewer",
+        "release-notes-writer",
+        "environment-promotion-checker"
+      ]
+    },
+    {
+      "id": "go-live-readiness-reviewer",
+      "path": "skills/go-live-readiness-reviewer/SKILL.md",
+      "purpose": "Review whether the people, process, environment, testing, support, and governance conditions are strong enough for a go-live decision.",
+      "handoffs": [
+        "rollback-readiness-checker",
+        "post-release-monitoring-plan",
+        "runbook-writer"
+      ]
+    },
+    {
+      "id": "rollback-readiness-checker",
+      "path": "skills/rollback-readiness-checker/SKILL.md",
+      "purpose": "Check whether rollback can actually be executed quickly and safely if the deployment causes unacceptable impact.",
+      "handoffs": [
+        "runbook-writer",
+        "deployment-risk-checker",
+        "go-live-readiness-reviewer"
+      ]
+    },
+    {
+      "id": "runbook-writer",
+      "path": "skills/runbook-writer/SKILL.md",
+      "purpose": "Write an executable operational runbook for deployment, cutover, validation, incident handling, and rollback.",
+      "handoffs": [
+        "post-release-monitoring-plan",
+        "go-live-readiness-reviewer",
+        "release-notes-writer"
+      ]
+    },
+    {
+      "id": "uat-readiness-checker",
+      "path": "skills/uat-readiness-checker/SKILL.md",
+      "purpose": "Check whether a system is ready for UAT by validating environment stability, scope clarity, data readiness, and acceptance ownership.",
+      "handoffs": [
+        "go-live-readiness-reviewer",
+        "release-cut-checker",
+        "environment-promotion-checker"
+      ]
+    },
+    {
+      "id": "environment-promotion-checker",
+      "path": "skills/environment-promotion-checker/SKILL.md",
+      "purpose": "Check whether a build or release can be promoted cleanly across environments with consistent configuration, approvals, and evidence.",
+      "handoffs": [
+        "go-live-readiness-reviewer",
+        "release-cut-checker",
+        "deployment-risk-checker"
+      ]
+    },
+    {
+      "id": "release-notes-writer",
+      "path": "skills/release-notes-writer/SKILL.md",
+      "purpose": "Write release notes that clearly communicate included changes, impacts, known issues, actions for users, and support expectations.",
+      "handoffs": [
+        "runbook-writer",
+        "post-release-monitoring-plan",
+        "go-live-readiness-reviewer"
+      ]
+    },
+    {
+      "id": "post-release-monitoring-plan",
+      "path": "skills/post-release-monitoring-plan/SKILL.md",
+      "purpose": "Plan what must be monitored immediately after release so regressions, incidents, and adoption problems are detected early.",
+      "handoffs": [
+        "deployment-risk-checker",
+        "runbook-writer",
+        "go-live-readiness-reviewer"
+      ]
+    },
+    {
+      "id": "deployment-risk-checker",
+      "path": "skills/deployment-risk-checker/SKILL.md",
+      "purpose": "Identify and rank the key risks attached to a proposed deployment, cutover, migration, or release approach.",
+      "handoffs": [
+        "rollback-readiness-checker",
+        "go-live-readiness-reviewer",
+        "post-release-monitoring-plan"
+      ]
+    }
+  ],
+  "templates": [
+    "templates/deployment-strategy-selection-template.md",
+    "templates/release-cut-checklist-template.md",
+    "templates/go-live-readiness-template.md",
+    "templates/rollback-readiness-template.md",
+    "templates/deployment-runbook-template.md",
+    "templates/uat-readiness-template.md",
+    "templates/environment-promotion-template.md",
+    "templates/release-notes-template.md",
+    "templates/post-release-monitoring-template.md",
+    "templates/deployment-risk-register-template.md"
+  ]
+}
